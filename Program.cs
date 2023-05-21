@@ -19,7 +19,7 @@ namespace VeHinh
                 Console.WriteLine("2. Draw the triangle (Botton right)");
                 Console.WriteLine("3. Draw the triangle (Top left)");
                 Console.WriteLine("4. Draw the triangle (Top right)");
-                Console.WriteLine("5. Draw the square");
+                Console.WriteLine("5. Draw the isosceles triangle");
                 Console.WriteLine("6. Draw the rectangle");
                 Console.WriteLine("0. Exit");
                 Console.WriteLine("Enter your choice: ");
@@ -43,8 +43,8 @@ namespace VeHinh
                         DrawTriangleTopRight(width);
                         break;
                     case 5:
-                        Console.WriteLine("Draw the square");
-                        DrawSquare(width);
+                        Console.WriteLine("Draw the isosceles triangle");
+                        DrawIsoscelesTriangle(width);
                         break;
                     case 6:
                         Console.WriteLine("Draw the rectangle");
@@ -113,16 +113,20 @@ namespace VeHinh
                 Console.WriteLine();
             }
         }
-        private static void DrawSquare(int width)
+        private static void DrawIsoscelesTriangle(int width)
         {
-            for (int i = 1; i <= width; i++)
-            {
-                for (int j = 1; j <= width; j++)
+            for (int i = 1; i <= limit; i++)
                 {
-                    Console.Write("* ");
+                    for (int j = 1; j <= limit - i; j++)
+                    {
+                        Console.Write(" ");
+                    }
+                    for (int j = 1; j <= 2 * i - 1; j++)
+                    {
+                        Console.Write("*");
+                    }
+                    Console.WriteLine();
                 }
-                Console.WriteLine();
-            }
         }
         private static void DrawRectangle(int width, int height)
         {
